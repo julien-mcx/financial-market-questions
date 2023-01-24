@@ -55,4 +55,4 @@ def forward_future():
 
 
 if __name__ == '__main__':
-    forward_future()
+    primarychoice()
