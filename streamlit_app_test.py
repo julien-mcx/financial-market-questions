@@ -3,7 +3,8 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
-import 
+import matplotlib.pyplot as plt
+
 
 """
 # Welcome to Streamlit!
