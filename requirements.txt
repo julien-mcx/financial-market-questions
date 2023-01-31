@@ -2,9 +2,10 @@ altair
 pandas
 streamlit
 matplotlib
+gspread_pandas
+google.oauth2
 # requirements.txt
-google-cloud-storage
-pubchempty
+pubchempy
 pysmiles
 networkx
 datetime
