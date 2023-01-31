@@ -19,6 +19,8 @@ from datetime import datetime
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
+st.write("gg")
+
 # Create a Google Authentication connection object
 scope = ['https://spreadsheets.google.com/feeds',
          'https://www.googleapis.com/auth/drive']
