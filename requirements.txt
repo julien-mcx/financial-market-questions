@@ -8,5 +8,5 @@ pubchempy
 pysmiles
 networkx
 datetime
-ssl
+
 
