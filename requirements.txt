@@ -4,3 +4,9 @@ streamlit
 matplotlib
 # requirements.txt
 google-cloud-storage
+pubchempty
+pysmiles
+networkx
+datetime
+ssl
+
