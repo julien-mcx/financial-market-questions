@@ -3,7 +3,6 @@ pandas
 streamlit
 matplotlib
 gspread_pandas
-google.oauth2
 # requirements.txt
 pubchempy
 pysmiles
