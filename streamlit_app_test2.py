@@ -1,35 +1,22 @@
-# Streamlit-Google Sheet
-## Modules
-import streamlit as st 
-from pandas import DataFrame
+# streamlit_app.py
 
-from gspread_pandas import Spread,Client
-from google.oauth2 import service_account
+import streamlit as st
+from gsheetsdb import connect
 
-# Application Related Module
-import pubchempy as pcp
-from pysmiles import read_smiles
-# 
-import networkx as nx
-import matplotlib.pyplot as plt
+# Create a connection object.
+conn = connect()
 
-from datetime import datetime
+# Perform SQL query on the Google Sheet.
+# Uses st.cache to only rerun when the query changes or after 10 min.
+@st.cache(ttl=600)
+def run_query(query):
+    rows = conn.execute(query, headers=1)
+    rows = rows.fetchall()
+    return rows
 
-# Disable certificate verification (Not necessary always)
-import ssl
-ssl._create_default_https_context = ssl._create_unverified_context
+sheet_url = st.secrets["public_gsheets_url"]
+rows = run_query(f'SELECT * FROM "{sheet_url}"')
 
-st.write("gg")
-
-# Create a Google Authentication connection object
-scope = ['https://spreadsheets.google.com/feeds',
-         'https://www.googleapis.com/auth/drive']
-
-credentials = service_account.Credentials.from_service_account_info(
-                st.secrets["gcp_service_account"], scopes = scope)
-client = Client(scope=scope,creds=credentials)
-spreadsheetname = "FuturesForwards"
-spread = Spread(spreadsheetname,client = client)
-
-# Check the connection
-st.write(spread.url)
+# Print results.
+for row in rows:
+    st.write(f"{row.name} has a :{row.pet}:")
