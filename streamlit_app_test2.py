@@ -5,8 +5,8 @@ from gsheetsdb import connect
 
 st.write("gg")
 
-# # Create a connection object.
-# conn = connect()
+# Create a connection object.
+conn = connect()
 
 # # Perform SQL query on the Google Sheet.
 # # Uses st.cache to only rerun when the query changes or after 10 min.
