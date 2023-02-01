@@ -21,7 +21,7 @@ import requests
 response = requests.get(sheet_url)
 response.raise_for_status()  # raises exception when not a 2xx response
 if response.status_code != 204:
-    return response.json()
+    st.write(response.json())
 
 st.write(response)
 st.write(sheet_url)
