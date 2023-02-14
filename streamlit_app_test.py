@@ -53,6 +53,14 @@ def forward_future():
     st.write("Un contrat forward est un accord d'achat ou de vente d'un actif (appelé sous-jacent) à une date future T (appelée la maturité) pour un certain prix (appelé le prix d'exercice).")
     st.write("Un éventail large de matières premières et actifs financiers forment ce que l'on appelle actif sous-jacent")
     
+    excel_file = 'QuestionsFinancedeMarche.xlsx'
+    excel = pd.read_excel(excel_file)
+    st.write(excel)
+    
+    
+    
+    
+    
 # excel_file = 'Questions.xlsx'
 
 # df = pd.read_excel(excel_file,
