@@ -54,9 +54,10 @@ def forward_future():
     st.write("Un éventail large de matières premières et actifs financiers forment ce que l'on appelle actif sous-jacent")
     
     excel_file = 'QuestionsFinancedeMarche.xlsx'
-    excel = pd.read_excel(excel_file)
+    excel = pd.read_excel('QuestionsFinancedeMarche.xlsx', index_col=0)  
     st.write(excel)
-    
+
+
     
     
     
