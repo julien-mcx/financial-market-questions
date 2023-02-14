@@ -16,7 +16,7 @@ forums](https://discuss.streamlit.io).
 
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
-
+st.write("test")
 def primarychoice():
     st.sidebar.info("This app is maintained by Michoux Julien. " "You can contact me at [ju.michoux@gmail.com].")
     st.sidebar.title("Let's choose your asset type")
