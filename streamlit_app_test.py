@@ -56,10 +56,6 @@ def forward_future():
     
     test = pd.read_excel('https:\\github.com\julien-mcx\financial-market-questions\blob\main\Questions.xlsx')
     st.write(test)
-    myfile = requests.get(url)
-
-    df=pd.read_excel(myfile.content)
-    print(df)
     
 # excel_file = 'Questions.xlsx'
 
