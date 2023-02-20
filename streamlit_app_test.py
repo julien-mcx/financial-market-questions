@@ -4,6 +4,7 @@ import math
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
+import requests
 
 
 """
@@ -52,10 +53,12 @@ def forward_future():
         Un premier contrat forward, sur le blé, est ainsi signé le 13 mars 1851. Quelques années plus tard, en 1865, les contrats futures standardisés font leur apparition.")
     st.write("Un contrat forward est un accord d'achat ou de vente d'un actif (appelé sous-jacent) à une date future T (appelée la maturité) pour un certain prix (appelé le prix d'exercice).")
     st.write("Un éventail large de matières premières et actifs financiers forment ce que l'on appelle actif sous-jacent")
-    
-    excel_file = 'QuestionsFinancedeMarche.xlsx'
-    excel = pd.read_excel('QuestionsFinancedeMarche.xlsx', index_col=0)  
-    st.write(excel)
+
+    url= 'https://github.com/julien-mcx/financial-market-questions/blob/main/Questions.xlsx'
+    myfile = requests.get(url)
+
+    df=pd.read_excel(myfile.content)
+    print(df)
 
 
     
