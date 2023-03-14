@@ -3,4 +3,3 @@ pandas
 streamlit
 matplotlib
 gsheetsdb
-st_aggrid
